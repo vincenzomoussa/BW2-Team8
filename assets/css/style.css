@@ -41,13 +41,13 @@
   cursor: pointer;
 }
 
-/* .d-none-mobile {
+.d-none-mobile {
   display: none;
-} */
+}
 
-/* .info-artist span.d-none-mobile {
+.info-artist span.d-none-mobile {
   display: none;
-} */
+}
 
 .d-flex {
   display: flex;
@@ -251,9 +251,9 @@
     bottom: 61px;
     background-color: #272727;
   }
-  /* .d-none-mobile {
+  .d-none-mobile {
     display: none;
-  } */
+  }
   .radio-mobile {
     position: absolute;
     right: 109px;
