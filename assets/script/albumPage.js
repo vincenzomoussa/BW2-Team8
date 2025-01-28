@@ -21,7 +21,7 @@ async function fetchAlbumDetails(albumId) {
   console.log("Richiesta dettagli album per ID:", albumId);
 
   // Costruisci l'URL API utilizzando l'ID dell'album
-  const apiUrl = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
+  const apiUrl = `https://api.deezer.com/album/${albumId}`;
   console.log("URL API:", apiUrl);
 
   // Imposta le opzioni per la richiesta fetch, inclusi i parametri dell'intestazione
@@ -29,7 +29,7 @@ async function fetchAlbumDetails(albumId) {
     method: "GET",
     headers: {
       "x-rapidapi-key": "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274", // Sostituisci 'YOUR_API_KEY' con la tua chiave API
-      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+      "x-rapidapi-host": "api.deezer.com",
     },
   };
 
@@ -70,16 +70,16 @@ function populateAlbumDetails(album) {
     trackRow.classList.add("row", "mb-2");
 
     trackRow.innerHTML = `
-            <div class="col-1">${index + 1}</div>
-            <div class="col-5">
-                <a href="#" class="text-decoration-none">${track.title}</a>
-            </div>
-            <div class="col-3">
-                <a href="#" class="text-decoration-none">${album.artist.name}</a>
-            </div>
-            <div class="col-2">${track.rank}</div>
-            <div class="col-1">${(track.duration / 60).toFixed(2)}</div>
-        `;
+      <div class="col-1">${index + 1}</div>
+      <div class="col-5">
+        <a href="#" class="text-decoration-none">${track.title}</a>
+      </div>
+      <div class="col-3">
+        <a href="#" class="text-decoration-none">${album.artist.name}</a>
+      </div>
+      <div class="col-2">${track.rank}</div>
+      <div class="col-1">${(track.duration / 60).toFixed(2)}</div>
+    `;
 
     trackListContainer.appendChild(trackRow);
   });
