@@ -1,5 +1,5 @@
 // Quando il contenuto della pagina è completamente caricato, esegui questa funzione
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   console.log("Pagina caricata");
 
   // Ottieni i parametri dall'URL
@@ -10,14 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Se l'ID dell'album è presente, chiama la funzione per ottenere i dettagli dell'album
   if (albumId) {
-    fetchAlbumDetails(albumId);
+    await fetchAlbumDetails(albumId);
   } else {
     console.error("ID dell'album non trovato nell'URL");
+    alert("Errore: ID dell'album non trovato nell'URL");
   }
 });
 
 // Funzione per ottenere i dettagli dell'album dall'API
-function fetchAlbumDetails(albumId) {
+async function fetchAlbumDetails(albumId) {
   console.log("Richiesta dettagli album per ID:", albumId);
 
   // Costruisci l'URL API utilizzando l'ID dell'album
@@ -28,19 +29,19 @@ function fetchAlbumDetails(albumId) {
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274",
-      "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+      "x-rapidapi-key": "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274", // Sostituisci 'YOUR_API_KEY' con la tua chiave API
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   };
 
-  // Esegui la richiesta fetch all'API
-  fetch(apiUrl, options)
-    .then((response) => response.json()) // Converti la risposta in formato JSON
-    .then((data) => {
-      console.log("Dati dell'album ricevuti:", data);
-      populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
-    })
-    .catch((error) => console.error("Errore nella richiesta:", error)); // Gestisci eventuali errori
+  try {
+    const response = await fetch(apiUrl, options);
+    const data = await response.json(); // Converti la risposta in formato JSON
+    console.log("Dati dell'album ricevuti:", data);
+    populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
+  } catch (error) {
+    console.error("Errore nella richiesta:", error); // Gestisci eventuali errori
+  }
 }
 
 // Funzione per popolare i dettagli dell'album sulla pagina
