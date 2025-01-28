@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     await fetchAlbumDetails(albumId);
   } else {
     console.error("ID dell'album non trovato nell'URL");
-    alert("Errore: ID dell'album non trovato nell'URL");
   }
 });
 
@@ -67,11 +66,9 @@ function populateAlbumDetails(album) {
 
   // Itera attraverso le tracce dell'album e crea righe per ciascuna traccia
   album.tracks.data.forEach((track, index) => {
-    // Crea un nuovo elemento div per la riga della traccia
     const trackRow = document.createElement("div");
     trackRow.classList.add("row", "mb-2");
 
-    // Imposta il contenuto HTML della riga della traccia
     trackRow.innerHTML = `
             <div class="col-1">${index + 1}</div>
             <div class="col-5">
@@ -84,7 +81,6 @@ function populateAlbumDetails(album) {
             <div class="col-1">${(track.duration / 60).toFixed(2)}</div>
         `;
 
-    // Aggiungi la nuova riga della traccia al contenitore della tracklist
     trackListContainer.appendChild(trackRow);
   });
 
