@@ -4,20 +4,319 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>searchPage</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <aside class="aside-start bg-color-black">
+      <div class="container-menu">
+        <ul class="ps-0">
+          <li class="d-flex align-center cursor-pointer">
+            <ion-icon class="padding-ion-icon font-icon-menu" name="ellipsis-horizontal-sharp"></ion-icon>
+          </li>
+          <li class="d-flex align-center cursor-pointer">
+            <a href="./homePage.html"
+              ><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</a
+            >
+          </li>
+
+          <li class="d-flex align-center cursor-pointer">
+            <a href="./searchPage.html"
+              ><ion-icon class="padding-ion-icon font-icon-menu" name="search-sharp"></ion-icon>Cerca</a
+            >
+          </li>
+          <li class="d-flex align-center cursor-pointer">
+            <ion-icon class="padding-ion-icon font-icon-menu" name="albums-sharp"></ion-icon>La tua libreria
+          </li>
+        </ul>
+        <ul class="ps-0">
+          <li class="d-flex align-center cursor-pointer">
+            <div class="padding-ion-icon"><ion-icon name="add-sharp"></ion-icon></div>
+            Crea playlist
+          </li>
+          <li class="d-flex align-center cursor-pointer">
+            <div class="padding-ion-icon"><ion-icon name="heart-sharp"></ion-icon></div>
+            Brani che ti piacciono
+          </li>
+          <li class="d-flex align-center cursor-pointer">
+            <div class="padding-ion-icon"><ion-icon name="bookmark-sharp"></ion-icon></div>
+            I tuoi episodi
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main main-artist">
+      <div class="select d-flex align-center">
+        <div class="d-flex">
+          <div class="container-icon-menu cursor-pointer">
+            <ion-icon class="icon-hero" name="chevron-back-outline"></ion-icon>
+          </div>
+          <div class="container-icon-menu cursor-pointer">
+            <ion-icon class="icon-hero" name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="profile">
+          <img src="./assets/img/searchPage/image-46.jpeg" alt="Logo profilo" />
+          <p class="mb-0">Lidia Nautilus...<ion-icon class="icon-profile" name="caret-down-outline"></ion-icon></p>
+        </div>
+      </div>
+      <div class="searchBar">
+        <div class="container">
+          <h1>Cerca</h1>
+          <form>
+            <ion-icon name="search-outline"></ion-icon>
+            <input id="inputSearchBar" type="text" placeholder="Cosa vuoi ascoltare?" />
+          </form>
+        </div>
+      </div>
+      <div class="sfoglia">
+        <div class="container">
+          <h3 class="mt-5">Sfoglia tutto</h3>
+          <div class="row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-3">
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-1.jpeg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-2.jpeg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-3.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-4.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-5.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-6.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-7.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-8.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-9.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-10.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-11.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-1.jpeg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-12.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-13.jpeg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-14.jpg" alt="Logo album" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="cardSearch">
+                <h4>Musica</h4>
+                <img src="./assets/img/searchPage/image-15.jpg" alt="Logo album" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ricerca text-white d-none">
+        <h3 class="my-3 mt-5">Brani</h3>
+        <ul id="braniList" class="p-0">
+          <!-- <li class="d-flex justify-content-between w-75 align-items-center mb-3">
+            <div class="">
+              <img src="./assets/imgs/main/image-11.jpg" width="45px" />
+              <div class="d-inline-block align-middle">
+                <p class="mb-0">Titolo</p>
+                <p class="mb-0">Artista</p>
+              </div>
+            </div>
+            <p class="mb-0">2:30</p>
+          </li> -->
+        </ul>
+      </div>
+    </main>
+    <aside class="aside-end bg-color-black">
+      <div class="container-title d-flex align-center">
+        <h3>Attività amici</h3>
+        <div class="d-flex align-center">
+          <p class="mb-0"><ion-icon class="font-icon-menu" name="people-sharp"></ion-icon></p>
+          <p class="mb-0"><ion-icon class="font-icon-menu" name="close-sharp"></ion-icon></p>
+        </div>
+      </div>
+      <ul class="friend-list ps-0">
+        <li class="friend-item d-flex">
+          <img src="./assets/img/mainPage/image-1.jpg" alt="Avatar" class="avatar" />
+          <div class="friend-info">
+            <div class="d-flex">
+              <p class="friend-name mb-0">Charlie Hookham</p>
+              <p class="mb-0">4 ore</p>
+            </div>
+            <p class="friend-status mb-0">In camera &bull; Yumi Zouma</p>
+            <p class="friend-status mb-0">
+              <ion-icon name="pause-circle-outline" class="icon-aside-end"></ion-icon>EP III
+            </p>
+          </div>
+        </li>
+        <li class="friend-item d-flex">
+          <img src="./assets/img/mainPage/image-11.jpg" alt="Avatar" class="avatar" />
+          <div class="friend-info">
+            <div class="d-flex">
+              <p class="friend-name mb-0">lightdark02</p>
+              <p class="mb-0">8 ore</p>
+            </div>
+            <p class="friend-status mb-0">Aimed to Kill &bull; Jade Le Mac</p>
+            <p class="friend-status mb-0">
+              <ion-icon name="pause-circle-outline" class="icon-aside-end"></ion-icon>Aimed to kill
+            </p>
+          </div>
+        </li>
+        <li class="friend-item d-flex">
+          <img src="./assets/img/mainPage/image-13.jpg" alt="Avatar" class="avatar" />
+          <div class="friend-info">
+            <div class="d-flex">
+              <p class="friend-name mb-0">Valeria Traverso</p>
+              <p class="mb-0">3 giorni</p>
+            </div>
+            <p class="friend-status mb-0">New Kings &bull; Sleeping Wolf</p>
+            <p class="friend-status mb-0">
+              <ion-icon name="musical-notes-outline" class="icon-aside-end"></ion-icon>Twint Badass Mood
+            </p>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="container-music-bar d-flex align-center">
+      <div class="container-title-song d-flex align-center">
+        <img
+          id="img-bar-music"
+          src="https://e-cdns-images.dzcdn.net/images/cover/ebcd291a552cf494598b7613a878a386/500x500-000000-80-0-0.jpg"
+          alt="Logo musicBar"
+        />
+        <div>
+          <p class="mb-0 pb-0" id="titolo-canzone-bar-music">VIOLA (feat.Salmo)</p>
+          <p class="d-none-mobile cursor-pointer mb-0" id="nome-artista-bar-music">Fedez</p>
+        </div>
+        <span class="heart-mobile"><ion-icon name="heart-outline"></ion-icon></span>
+      </div>
+
+      <div class="container-play-music">
+        <div class="container-icon-music d-flex">
+          <p class="d-none-mobile mb-0 pSearchBar"><ion-icon name="shuffle-sharp"></ion-icon></p>
+          <p class="d-none-mobile mb-0 pSearchBar" id="canzone-precedente">
+            <ion-icon name="play-skip-back-sharp"></ion-icon>
+          </p>
+          <p class="mb-0 pSearchBar" id="avvio-pausa"><ion-icon name="play-circle-sharp"></ion-icon></p>
+          <p class="d-none-mobile mb-0 pSearchBar" id="canzone-successiva">
+            <ion-icon name="play-skip-forward-sharp"></ion-icon>
+          </p>
+          <p class="d-none-mobile mb-0 pSearchBar" id="reset-canzone"><ion-icon name="refresh-sharp"></ion-icon></p>
+        </div>
+        <div class="container-time-music d-none-mobile barraMusicS">
+          <span id="current-time" class="time">0:00</span>
+          <input type="range" id="seek-slider" max="100" value="0" />
+          <span id="duration" class="time">0:00</span>
+        </div>
+      </div>
+
+      <div class="container-mix">
+        <div class="d-flex align-center">
+          <p class="d-none-mobile mb-0"><ion-icon name="mic-sharp"></ion-icon></p>
+          <p class="d-none-mobile mb-0"><ion-icon name="albums-sharp"></ion-icon></p>
+          <p class="radio-mobile mb-0"><ion-icon name="radio-sharp"></ion-icon></p>
+          <p id="volume" class="d-none-mobile mb-0"><ion-icon name="volume-high-sharp"></ion-icon></p>
+          <input class="d-none-mobile mb-0" type="range" id="volume-slider" max="1" value="1" step="0.01" />
+          <p class="d-none-mobile mb-0"><ion-icon name="expand-sharp"></ion-icon></p>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <div class="container-icon-mobile-nav">
+        <div>
+          <a href="./homePage.html"
+            ><ion-icon class="font-icon-menu" name="home-sharp"></ion-icon>
+            <p class="mb-0">Home</p></a
+          >
+        </div>
+        <div>
+          <ion-icon class="font-icon-menu" name="search-sharp"></ion-icon>
+          <p class="mb-0">Cerca</p>
+        </div>
+        <div>
+          <ion-icon class="font-icon-menu" name="albums-sharp"></ion-icon>
+          <p class="mb-0">La tua libreria</p>
+        </div>
+      </div>
+    </div>
+    <audio src=""></audio>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./assets/script/searchPage.js"></script>
+    <script src="./assets/script/musicBar.js"></script>
   </body>
 </html>
