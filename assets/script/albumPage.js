@@ -1,46 +1,47 @@
-// Quando il contenuto della pagina è completamente caricato, esegui questa funzione
-document.addEventListener("DOMContentLoaded", async function () {
-  console.log("Pagina caricata");
+// Ottieni i parametri dall'URL
+const url = "deezerdevs-deezer.p.rapidapi.com";
+const token = "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274";
+const urlParams = new URLSearchParams(window.location.search);
+const albumId = urlParams.get("id"); // Assicurati che il parametro sia 'id'
+console.log("ID dell'album:", albumId);
 
-  // Ottieni i parametri dall'URL
-  const urlParams = new URLSearchParams(window.location.search);
-  // Estrarre l'ID dell'album dai parametri dell'URL
-  const albumId = urlParams.get("id");
-  console.log("ID dell'album:", albumId);
-
-  // Se l'ID dell'album è presente, chiama la funzione per ottenere i dettagli dell'album
-  if (albumId) {
-    await fetchAlbumDetails(albumId);
-  } else {
-    console.error("ID dell'album non trovato nell'URL");
-  }
-});
+if (albumId) {
+  fetchAlbumDetails(albumId); // Chiama la funzione solo se esiste l'ID dell'album
+} else {
+  console.error("ID dell'album non trovato nell'URL");
+}
 
 // Funzione per ottenere i dettagli dell'album dall'API
-async function fetchAlbumDetails(albumId) {
+function fetchAlbumDetails(albumId) {
   console.log("Richiesta dettagli album per ID:", albumId);
 
   // Costruisci l'URL API utilizzando l'ID dell'album
-  const apiUrl = `https://api.deezer.com/album/${albumId}`;
+  const apiUrl = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
   console.log("URL API:", apiUrl);
 
   // Imposta le opzioni per la richiesta fetch, inclusi i parametri dell'intestazione
   const options = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274", // Sostituisci 'YOUR_API_KEY' con la tua chiave API
-      "x-rapidapi-host": "api.deezer.com",
+      "x-rapidapi-key": token, // Sostituisci con la tua chiave API
+      "x-rapidapi-host": url,
     },
   };
 
-  try {
-    const response = await fetch(apiUrl, options);
-    const data = await response.json(); // Converti la risposta in formato JSON
-    console.log("Dati dell'album ricevuti:", data);
-    populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
-  } catch (error) {
-    console.error("Errore nella richiesta:", error); // Gestisci eventuali errori
-  }
+  fetch(apiUrl, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Errore API: ${response.status}`);
+      }
+      return response.json(); // Converti la risposta in formato JSON
+    })
+    .then((data) => {
+      console.log("Dati dell'album ricevuti:", data);
+      populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
+    })
+    .catch((error) => {
+      console.error("Errore nella richiesta:", error); // Gestisci eventuali errori
+    });
 }
 
 // Funzione per popolare i dettagli dell'album sulla pagina
@@ -56,10 +57,10 @@ function populateAlbumDetails(album) {
   // Imposta la data di rilascio dell'album
   document.getElementById("album-release-date").textContent = album.release_date;
   // Imposta il numero di tracce dell'album
-  document.getElementById("album-track-count").textContent = album.nb_tracks;
+  document.getElementById("album-track-count").textContent = `${album.nb_tracks} brani`;
 
   // Seleziona il contenitore della tracklist e svuotalo
-  const trackListContainer = document.querySelector(".container.mt-5 .row.mb-3").nextElementSibling;
+  const trackListContainer = document.getElementById("track-list");
   trackListContainer.innerHTML = ""; // Pulisci la tracklist esistente
 
   console.log("Popolamento tracklist");
