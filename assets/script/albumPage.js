@@ -1,5 +1,4 @@
 // Ottieni i parametri dall'URL
-const url = "deezerdevs-deezer.p.rapidapi.com";
 const token = "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274";
 const urlParams = new URLSearchParams(window.location.search);
 const albumId = urlParams.get("id"); // Assicurati che il parametro sia 'id'
@@ -11,38 +10,33 @@ if (albumId) {
   console.error("ID dell'album non trovato nell'URL");
 }
 
-// Funzione per ottenere i dettagli dell'album dall'API
-function fetchAlbumDetails(albumId) {
-  console.log("Richiesta dettagli album per ID:", albumId);
+// Costruisci l'URL API utilizzando l'ID dell'album
+const apiUrl = `https://deezerdevs-deezer.p.rapidapi.com/album/${playlistId}`;
+console.log("URL API:", apiUrl);
 
-  // Costruisci l'URL API utilizzando l'ID dell'album
-  const apiUrl = `https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}`;
-  console.log("URL API:", apiUrl);
+// Imposta le opzioni per la richiesta fetch, inclusi i parametri dell'intestazione
+const options = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": token, // Sostituisci con la tua chiave API
+    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
 
-  // Imposta le opzioni per la richiesta fetch, inclusi i parametri dell'intestazione
-  const options = {
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": token, // Sostituisci con la tua chiave API
-      "x-rapidapi-host": url,
-    },
-  };
-
-  fetch(apiUrl, options)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Errore API: ${response.status}`);
-      }
-      return response.json(); // Converti la risposta in formato JSON
-    })
-    .then((data) => {
-      console.log("Dati dell'album ricevuti:", data);
-      populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
-    })
-    .catch((error) => {
-      console.error("Errore nella richiesta:", error); // Gestisci eventuali errori
-    });
-}
+fetch(apiUrl, options)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Errore API: ${response.status}`);
+    }
+    return response.json(); // Converti la risposta in formato JSON
+  })
+  .then((data) => {
+    console.log("Dati dell'album ricevuti:", data);
+    populateAlbumDetails(data); // Popola i dettagli dell'album con i dati ricevuti
+  })
+  .catch((error) => {
+    console.error("Errore nella richiesta:", error); // Gestisci eventuali errori
+  });
 
 // Funzione per popolare i dettagli dell'album sulla pagina
 function populateAlbumDetails(album) {
