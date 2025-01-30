@@ -1269,3 +1269,42 @@ main::-webkit-scrollbar-thumb {
 .barraMusicS {
   height: 11.5px;
 }
+/* aggiustamengi giulio */
+#braniList li {
+  font-size: 1.2rem; /* Aumenta la dimensione del testo */
+  padding: 10px; /* Aggiunge più spazio intorno agli elementi */
+  display: flex;
+  align-items: center;
+}
+
+#braniList img {
+  width: 60px; /* Aumenta la dimensione delle immagini */
+  height: auto;
+}
+
+#braniList p {
+  font-size: 1.1rem;
+}
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  width: 320px; /* Aumenta la larghezza */
+}
+
+form ion-icon {
+  font-size: 1.5rem; /* Ingrandisce l'icona */
+}
+
+#inputSearchBar {
+  font-size: 1.1rem; /* Ingrandisce il testo dell'input */
+  padding: 10px;
+  width: 100%;
+}
+.margine {
+  margin-left: 20px;
+  margin-right: 20px;
+}
