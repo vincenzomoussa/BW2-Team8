@@ -400,6 +400,14 @@ main {
     display: none;
   }
 }
+.playList-container {
+  height: 60%;
+  overflow-y: auto;
+  width: 110%;
+}
+.playList-container::-webkit-scrollbar {
+  display: none;
+}
 
 .select {
   justify-content: space-between;
@@ -522,6 +530,40 @@ main {
   font-weight: bold;
 }
 
+.playlist {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.playlist-card {
+  background-color: #282828;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: 1 1 calc(33.333% - 20px);
+}
+
+.playlist-cover {
+  height: 100%;
+  width: 20%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+}
+
+.playlist-name {
+  color: #fff;
+  font-size: clamp(14px, 1vw, 1.1rem);
+  font-weight: bold;
+  margin: 0;
+  margin-inline: 14px;
+  line-height: 1.2em;
+}
+
 .icon-wrap {
   display: flex;
   align-items: center;
@@ -538,6 +580,23 @@ main {
 }
 
 @media screen and (max-width: 1000px) {
+  .playlist {
+    gap: 12px;
+  }
+  .playlist-cover {
+    width: 30%;
+  }
+  .playlist-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .playlist-card {
+    flex: 1 1 calc(50% - 12px);
+  }
   .icons {
     display: flex;
     -moz-column-gap: 8px;
@@ -678,12 +737,74 @@ main {
   position: relative;
   overflow-y: auto;
 }
-main .select-artist {
+main .select-album {
   padding: 20px;
+}
+main .nav-album {
+  height: 60px;
+}
+main .hero-album {
+  height: 480px;
+}
+main .song-container {
+  background-color: rgba(0, 0, 0, 0.266);
+  width: 100%;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  color: white;
+  padding-bottom: 100px;
+  min-height: 130%;
+}
+main .album-info-wrap {
+  display: flex;
+  align-items: flex-end;
+  padding-block: 16px;
+  row-gap: 20px;
+}
+main .album-info-wrap img {
+  width: 170px;
+  margin-inline: 20px;
+  box-shadow: 5px 5px 34px 2px rgba(0, 0, 0, 0.58);
+}
+main .album-info-wrap .album-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+main .album-info-wrap .album-info .d-none {
+  display: none;
+}
+main .album-info-wrap .album-info img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 0;
+  margin-right: 8px;
+}
+main .album-info-wrap .album-info h1 {
+  font-size: clamp(20px, 3vw, 3rem);
+  color: white;
+  font-weight: 800;
+}
+main .album-info-wrap .album-info span {
+  font-size: 12px;
+  color: white;
+}
+main .album-info-wrap .album-info p {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .bold {
   font-weight: 600;
+}
+
+.thin {
+  font-weight: 400;
 }
 
 main::-webkit-scrollbar {
@@ -725,6 +846,30 @@ main::-webkit-scrollbar-thumb {
   font-size: 32px;
 }
 
+.table-wrap {
+  padding-inline: 20px;
+}
+.table-wrap table {
+  width: 100%;
+  font-size: 13px;
+}
+.table-wrap table td {
+  padding-top: 16px;
+  vertical-align: middle;
+}
+.table-wrap table p {
+  margin-bottom: 6px;
+}
+.table-wrap table .clock {
+  font-size: 15px;
+}
+.table-wrap table th {
+  font-weight: 400;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.121);
+  vertical-align: middle;
+}
+
 .l {
   text-align: left;
 }
@@ -743,6 +888,25 @@ main::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 1199px) {
+  main .album-info-wrap {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  main .album-info-wrap .album-info {
+    padding-left: 20px;
+    align-self: start;
+  }
+  main .album-info-wrap .album-info .album-mobile {
+    color: rgba(151, 151, 151, 0.7882352941);
+    display: block;
+  }
+  main .album-info-wrap .album-info #year {
+    position: absolute;
+    bottom: 16px;
+    left: 73px;
+    color: rgba(151, 151, 151, 0.7882352941);
+  }
   .album-cta {
     position: relative;
   }
@@ -754,6 +918,22 @@ main::-webkit-scrollbar-thumb {
     position: absolute;
     right: 70px;
     display: block;
+  }
+  .song-container table .c {
+    display: none;
+  }
+  .song-container table .r {
+    display: none;
+  }
+  .song-container table tr {
+    position: relative;
+  }
+  .song-container table tr::after {
+    content: "⁝";
+    font-size: 28px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 .hero-artist {
@@ -1059,8 +1239,8 @@ main::-webkit-scrollbar-thumb {
   padding: 0.75rem 1rem;
   text-align: end;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
   color: white;
 }
 .sfoglia .cardSearch h4 {
