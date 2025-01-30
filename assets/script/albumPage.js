@@ -59,7 +59,7 @@ const getInfoAlbum = function (id) {
 
 let artistName = document.getElementById("artistName");
 artistName.addEventListener("click", function () {
-  window.location.href = `./artist.html?id=${id}`;
+  window.location.href = `./artistPage.html?id=${id}`;
 });
 
 function convertSeconds(seconds) {
@@ -84,7 +84,7 @@ const barMusicinfo = function () {
     titoloCanzoneBarMusic.innerText = oggArtistaStorage.titolo;
     nomeArtistaBarMusic.innerHTML = oggArtistaStorage.nomeArtista;
     nomeArtistaBarMusic.addEventListener("click", function () {
-      window.location.href = `./artist.html?id=${oggArtistaStorage.idArtista}`;
+      window.location.href = `./artistPage.html?id=${oggArtistaStorage.idArtista}`;
     });
   } else {
     audio.src = "https://cdn-preview-a.dzcdn.net/stream/c-a97dcc722aae5375f05d9a74f9d69a76-3.mp3";
