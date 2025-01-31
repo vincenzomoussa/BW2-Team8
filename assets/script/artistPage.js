@@ -9,7 +9,7 @@ function getLike(heartElementId) {
       if (heartIcon.getAttribute("name") === "heart-outline") {
         console.log("Changing to heart");
         heartIcon.setAttribute("name", "heart");
-        heartIcon.style.color = "red";
+        heartIcon.style.color = "grey";
       } else {
         console.log("Changing to heart-outline");
         heartIcon.setAttribute("name", "heart-outline");
