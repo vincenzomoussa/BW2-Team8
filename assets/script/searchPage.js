@@ -94,3 +94,77 @@ function debounce(fn, delay) {
     timeout = setTimeout(() => fn.apply(this, args), delay);
   };
 }
+
+const getInfoCantante = function (idAlbum, index) {
+  let apiCantante = ` https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
+  fetch(apiCantante)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("LA RISPOSTA DEL SERVER NON è OK");
+      }
+    })
+    .then((album) => {
+      let titolo = "";
+      let img = "";
+      console.log(album);
+
+      titolo = album.title;
+      img = album.cover_medium;
+      let id = album.id;
+      idAlbum = id;
+
+      console.log(id);
+
+      stampaAlbum(titolo, index, img, id);
+    })
+    .catch((error) => {
+      console.log("errore", error);
+    });
+};
+
+let playListCard = document.querySelectorAll(".playlist-card");
+console.log(playListCard);
+
+const stampaAlbum = function (titolo, index, img, id) {
+  playListCard[index].innerHTML = ` 
+  <img src=${img} alt="Playlist Cover" class="playlist-cover" />
+  <p class="playlist-name">${titolo}</p>`;
+
+  playListCard[index].addEventListener("click", function () {
+    window.location.href = `./albumPage.html?id=${id} `;
+  });
+};
+
+getInfoCantante("103248", 0); //103248
+
+getInfoCantante("75621062", 1); //15116337
+
+getInfoCantante("107540", 2); //1075407
+
+getInfoCantante("11375450", 3); //11375450
+
+getInfoCantante("74434962", 4); //74434962
+
+getInfoCantante("523974", 5); //523909312
+
+getInfoCantante("103248", 6); //103248
+
+getInfoCantante("75621062", 7); //15116337
+
+getInfoCantante("107540", 8); //1075407
+
+getInfoCantante("11375450", 9); //11375450
+
+getInfoCantante("74434962", 10); //74434962
+
+getInfoCantante("523974", 11); //523909312
+
+getInfoCantante("107540", 12); //1075407
+
+getInfoCantante("11375450", 13); //11375450
+
+getInfoCantante("74434962", 14); //74434962
+
+getInfoCantante("523974", 15); //523909312
