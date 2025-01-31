@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>artistPage</title>
+
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="body-homepage">
+    <div class="d-flex grow space-between">
+      <aside class="aside-start bg-color-black">
+        <div class="container-menu">
+          <ul>
+            <li class="d-flex align-center cursor-pointer">
+              <ion-icon class="padding-ion-icon font-icon-menu" name="ellipsis-horizontal-sharp"></ion-icon>
+            </li>
+            <li class="d-flex align-center cursor-pointer">
+              <a href="./homePage.html"
+                ><ion-icon class="padding-ion-icon font-icon-menu" name="home-sharp"></ion-icon>Home</a
+              >
+            </li>
+
+            <li class="d-flex align-center cursor-pointer">
+              <a href="./searchPage.html"
+                ><ion-icon class="padding-ion-icon font-icon-menu" name="search-sharp"></ion-icon>Cerca</a
+              >
+            </li>
+            <li class="d-flex align-center cursor-pointer">
+              <ion-icon class="padding-ion-icon font-icon-menu" name="albums-sharp"></ion-icon>La tua libreria
+            </li>
+          </ul>
+          <ul>
+            <li class="d-flex align-center cursor-pointer">
+              <div class="padding-ion-icon"><ion-icon name="add-sharp"></ion-icon></div>
+              Crea playlist
+            </li>
+            <li class="d-flex align-center cursor-pointer">
+              <div class="padding-ion-icon"><ion-icon name="heart-sharp"></ion-icon></div>
+              Brani che ti piacciono
+            </li>
+            <li class="d-flex align-center cursor-pointer">
+              <div class="padding-ion-icon"><ion-icon name="bookmark-sharp"></ion-icon></div>
+              I tuoi episodi
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="spinner"></div>
+
+      <main class="d-none main-artist">
+        <div class="hero-artist">
+          <div class="nav-artist">
+            <div class="margine select select-artist d-flex align-center">
+              <div class="d-flex">
+                <div class="container-icon-menu cursor-pointer">
+                  <ion-icon class="icon-hero" name="chevron-back-outline"></ion-icon>
+                </div>
+                <div class="container-icon-menu cursor-pointer">
+                  <ion-icon class="icon-hero" name="chevron-forward-outline"></ion-icon>
+                </div>
+              </div>
+              <div class="profile">
+                <img src="./assets/img/searchPage/image-46.jpeg" alt="" />
+                <p>Lidia Nautilus...<ion-icon class="icon-profile" name="caret-down-outline"></ion-icon></p>
+              </div>
+            </div>
+          </div>
+          <div class="info-artist">
+            <span class="d-none-mobile">
+              <img
+                id="artistImage"
+                src="https://www.genzhiphop.com/wp-content/uploads/2021/09/Legitly-Verified-Blue-Badge-top-page.png"
+                alt="verified"
+                width="24px"
+              />
+              Artista verificato
+            </span>
+            <h1 id="artistTitle"></h1>
+            <p id="fanCount">3.320.123 ascoltatori mensili</p>
+          </div>
+        </div>
+
+        <div class="artist-container">
+          <div class="album-cta">
+            <ion-icon class="shuffle d-none" name="shuffle"></ion-icon>
+            <div class="play-wrap">
+              <ion-icon name="play" class="play"></ion-icon>
+            </div>
+
+            <h3>FOLLOWING</h3>
+            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+          </div>
+          <div class="general-container">
+            <div class="popolari">
+              <h2>Popolari</h2>
+              <table></table>
+              <table class="table2 d-none"></table>
+              <p id="altro">VISUALIZZA ALTRO</p>
+            </div>
+            <div class="brani">
+              <h2>Brani che ti piacciono</h2>
+              <div class="textAndImg">
+                <div class="imgAndIcon">
+                  <img class="roundedImg" src="./assets/imgs/main/image-12.jpg" alt="artist" width="50px" />
+                  <ion-icon name="heart"></ion-icon>
+                </div>
+                <div class="brani-info">
+                  <h4>Hai messo mi piace</h4>
+                  <p id="info">Di Yellowcard</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="aside-end bg-color-black">
+        <div class="container-title d-flex align-center">
+          <h3 class="fs-5">Attività amici</h3>
+          <div class="d-flex align-center">
+            <p><ion-icon class="font-icon-menu" name="people-sharp"></ion-icon></p>
+            <p><ion-icon class="font-icon-menu" name="close-sharp"></ion-icon></p>
+          </div>
+        </div>
+        <ul class="friend-list">
+          <li class="friend-item d-flex">
+            <img src="./assets/img/mainPage/image-1.jpg" alt="Avatar" class="avatar" />
+            <div class="friend-info">
+              <div class="d-flex">
+                <p class="friend-name">Charlie Hookham</p>
+                <p>4 ore</p>
+              </div>
+              <p class="friend-status">In camera &bull; Yumi Zouma</p>
+              <p class="friend-status">
+                <ion-icon name="pause-circle-outline" class="icon-aside-end"></ion-icon>EP III
+              </p>
+            </div>
+          </li>
+          <li class="friend-item d-flex">
+            <img src="./assets/img/mainPage/image-11.jpg" alt="Avatar" class="avatar" />
+            <div class="friend-info">
+              <div class="d-flex">
+                <p class="friend-name">lightdark02</p>
+                <p>8 ore</p>
+              </div>
+              <p class="friend-status">Aimed to Kill &bull; Jade Le Mac</p>
+              <p class="friend-status">
+                <ion-icon name="pause-circle-outline" class="icon-aside-end"></ion-icon>Aimed to kill
+              </p>
+            </div>
+          </li>
+          <li class="friend-item d-flex">
+            <img src="./assets/img/mainPage/image-13.jpg" alt="Avatar" class="avatar" />
+            <div class="friend-info">
+              <div class="d-flex">
+                <p class="friend-name">Valeria Traverso</p>
+                <p>3 giorni</p>
+              </div>
+              <p class="friend-status">New Kings &bull; Sleeping Wolf</p>
+              <p class="friend-status">
+                <ion-icon name="musical-notes-outline" class="icon-aside-end"></ion-icon>Twint Badass Mood
+              </p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="container-music-bar d-flex align-center">
+      <div class="container-title-song d-flex align-center">
+        <img
+          id="img-bar-music"
+          src="https://e-cdns-images.dzcdn.net/images/cover/ebcd291a552cf494598b7613a878a386/500x500-000000-80-0-0.jpg"
+          alt=""
+        />
+        <div>
+          <p id="titolo-canzone-bar-music">VIOLA (feat.Salmo)</p>
+          <p class="d-none-mobile cursor-pointer" id="nome-artista-bar-music">Fedez</p>
+        </div>
+        <span class="heart-mobile"><ion-icon name="heart-outline"></ion-icon></span>
+      </div>
+
+      <div class="container-play-music">
+        <div class="container-icon-music d-flex">
+          <p class="d-none-mobile"><ion-icon name="shuffle-sharp"></ion-icon></p>
+          <p class="d-none-mobile" id="canzone-precedente"><ion-icon name="play-skip-back-sharp"></ion-icon></p>
+          <p id="avvio-pausa"><ion-icon name="play-circle-sharp"></ion-icon></p>
+          <p class="d-none-mobile" id="canzone-successiva"><ion-icon name="play-skip-forward-sharp"></ion-icon></p>
+          <p class="d-none-mobile" id="reset-canzone"><ion-icon name="refresh-sharp"></ion-icon></p>
+        </div>
+        <div class="container-time-music d-none-mobile">
+          <span id="current-time" class="time">0:00</span>
+          <input type="range" id="seek-slider" max="100" value="0" />
+          <span id="duration" class="time">0:00</span>
+        </div>
+      </div>
+
+      <div class="container-mix">
+        <div class="d-flex align-center">
+          <p class="d-none-mobile"><ion-icon name="mic-sharp"></ion-icon></p>
+          <p class="d-none-mobile"><ion-icon name="albums-sharp"></ion-icon></p>
+          <p class="radio-mobile"><ion-icon name="radio-sharp"></ion-icon></p>
+          <p id="volume" class="d-none-mobile"><ion-icon name="volume-high-sharp"></ion-icon></p>
+          <input class="d-none-mobile" type="range" id="volume-slider" max="1" value="1" step="0.01" />
+          <p class="d-none-mobile"><ion-icon name="expand-sharp"></ion-icon></p>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <div class="container-icon-mobile-nav">
+        <div>
+          <a href="./homePage.html"
+            ><ion-icon class="font-icon-menu" name="home-sharp"></ion-icon>
+            <p>Home</p></a
+          >
+        </div>
+        <div>
+          <ion-icon class="font-icon-menu" name="search-sharp"></ion-icon>
+          <p>Cerca</p>
+        </div>
+        <div>
+          <ion-icon class="font-icon-menu" name="albums-sharp"></ion-icon>
+          <p>La tua libreria</p>
+        </div>
+      </div>
+    </div>
+    <audio src=""></audio>
+    <script src="./assets/script/artistPage.js"></script>
+    <script src="./assets/script/musicBar.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
