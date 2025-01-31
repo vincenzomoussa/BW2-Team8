@@ -1,3 +1,26 @@
+//funzione per mettere like
+function getLike(heartElementId) {
+  const heartElement = document.getElementById(heartElementId);
+
+  if (heartElement) {
+    heartElement.addEventListener("click", function () {
+      const heartIcon = this.querySelector("ion-icon");
+      console.log("Icon clicked");
+      if (heartIcon.getAttribute("name") === "heart-outline") {
+        console.log("Changing to heart");
+        heartIcon.setAttribute("name", "heart");
+        heartIcon.style.color = "red";
+      } else {
+        console.log("Changing to heart-outline");
+        heartIcon.setAttribute("name", "heart-outline");
+        heartIcon.style.color = "";
+      }
+    });
+  } else {
+    console.error(`Element with id "${heartElementId}" not found.`);
+  }
+}
+
 let albumId = new URLSearchParams(location.search).get("id");
 let table = document.querySelector("table");
 let table2 = document.querySelector(".table2");
@@ -170,3 +193,5 @@ function convertMinutes(seconds) {
   const remainingMinutes = minutes % 60;
   return `${hours} ora ${remainingMinutes} min`;
 }
+
+getLike("heart");

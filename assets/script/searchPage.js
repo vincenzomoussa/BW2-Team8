@@ -1,3 +1,26 @@
+//funzione per mettere like
+function getLike(heartElementId) {
+  const heartElement = document.getElementById(heartElementId);
+
+  if (heartElement) {
+    heartElement.addEventListener("click", function () {
+      const heartIcon = this.querySelector("ion-icon");
+      console.log("Icon clicked");
+      if (heartIcon.getAttribute("name") === "heart-outline") {
+        console.log("Changing to heart");
+        heartIcon.setAttribute("name", "heart");
+        heartIcon.style.color = "red";
+      } else {
+        console.log("Changing to heart-outline");
+        heartIcon.setAttribute("name", "heart-outline");
+        heartIcon.style.color = "";
+      }
+    });
+  } else {
+    console.error(`Element with id "${heartElementId}" not found.`);
+  }
+}
+
 const inputSearchBar = document.getElementById("inputSearchBar");
 const braniList = document.getElementById("braniList");
 const sfoglia = document.querySelector(".sfoglia");
@@ -94,3 +117,5 @@ function debounce(fn, delay) {
     timeout = setTimeout(() => fn.apply(this, args), delay);
   };
 }
+
+getLike("heart");
