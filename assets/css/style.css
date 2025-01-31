@@ -158,6 +158,9 @@ div:nth-child(2) {
   color: #b3b3b3;
   font-size: 0.7rem;
 }
+.playlist-list:nth-child(2) {
+  display: none;
+}
 
 .icon-aside-end {
   font-size: 16px;
@@ -554,6 +557,7 @@ main {
   align-items: center;
   cursor: pointer;
   flex: 1 1 calc(33.333% - 20px);
+  height: 80px;
 }
 
 .playlist-cover {
@@ -1270,7 +1274,7 @@ main::-webkit-scrollbar-thumb {
   height: 100px;
   margin-top: 12px;
   border-radius: 15px;
-  transform: rotate(12deg) translate(35px);
+  transform: rotate(8deg) translate(50px);
   box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4509803922);
 }
 

@@ -129,8 +129,9 @@ console.log(playListCard);
 
 const stampaAlbum = function (titolo, index, img, id) {
   playListCard[index].innerHTML = ` 
-  <img src=${img} alt="Playlist Cover" class="playlist-cover" />
-  <p class="playlist-name">${titolo}</p>`;
+  <p class="playlist-name">${titolo}</p>
+  <img src=${img} alt="Playlist Cover" class="playlist-cover1" />
+  `;
 
   playListCard[index].addEventListener("click", function () {
     window.location.href = `./albumPage.html?id=${id} `;
