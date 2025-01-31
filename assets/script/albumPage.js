@@ -1,3 +1,50 @@
+const url = "deezerdevs-deezer.p.rapidapi.com";
+const token = "e85f7e1b6amsh3a1e91a6c83fe6ep14f6a0jsn1120c9a61274";
+
+// Funzione per ottenere tutte le playlist
+function fetchAllPlaylists() {
+  const apiUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=playlist`;
+  const options = {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": token,
+      "x-rapidapi-host": url,
+    },
+  };
+
+  fetch(apiUrl, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Errore API: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Tutte le playlist ricevute:", data);
+      const playlistList = document.getElementById("playlist-list");
+      playlistList.innerHTML = ""; // Pulisci la lista esistente
+
+      data.data.forEach((playlist) => {
+        const playlistRow = document.createElement("div");
+        playlistRow.classList.add("col-12");
+
+        playlistRow.innerHTML = `
+          <a style="text-decoration:none; href="#" id="playlist-link ">${playlist.title}</a>
+        `;
+
+        playlistList.appendChild(playlistRow);
+      });
+    })
+    .catch((error) => {
+      showError("Si è verificato un errore nel caricare le playlist.");
+      console.error("Errore nella richiesta:", error);
+    });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  fetchAllPlaylists();
+  fetchPlaylistTracks();
+});
+
 let id = new URLSearchParams(location.search).get("id");
 
 let arrayCanzoni = [];
