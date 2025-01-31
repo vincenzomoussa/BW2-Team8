@@ -558,6 +558,15 @@ main {
 
 .playlist-cover {
   height: 100%;
+  width: 20%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+}
+.playlist-cover1 {
+  height: 100%;
   width: 44%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1258,10 +1267,10 @@ main::-webkit-scrollbar-thumb {
   text-align: start;
 }
 .sfoglia .playlist-card img {
-  height: 140px;
+  height: 100px;
   margin-top: 12px;
   border-radius: 15px;
-  transform: rotate(22deg) translate(10px);
+  transform: rotate(12deg) translate(35px);
   box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4509803922);
 }
 
@@ -1323,8 +1332,11 @@ form ion-icon {
 #prova1 {
   font-size: 100px;
 }
+
 #playlist-list {
   font-size: medium;
-  color: #171717;
+  color: #b3b3b3;
   text-decoration: none;
+  line-height: 30px;
+  cursor: pointer;
 }
